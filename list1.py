@@ -23,8 +23,12 @@
 # and last chars of the string are the same.
 # Note: python does not have a ++ operator, but += works.
 def match_ends(words):
-    """Your code goes here.  Edit this docstring."""
-    return
+     word_count = []
+     print words
+     for word in words:
+          if len(word) > 1 and word[0] == word[-1]:
+               word_count.append(word)
+     return len(word_count)
 
 
 # B. front_x
@@ -35,8 +39,16 @@ def match_ends(words):
 # Hint: this can be done by making 2 lists and sorting each of them
 # before combining them.
 def front_x(words):
-    """Your code goes here.  Edit this docstring."""
-    return
+     x_order = []
+     order = []
+     for word in words:
+          if word[0] == "x":
+               x_order.append(word)
+               x_order.sort()
+          else:
+               order.append(word)
+               order.sort()
+     return x_order + order
 
 
 # C. sort_last
@@ -46,9 +58,8 @@ def front_x(words):
 # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
 def sort_last(tuples):
-    """Your code goes here.  Edit this docstring."""
-    return
-
+     sorter = sorted(tuples, key=lambda num : num[-1])
+     return sorter
 
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
